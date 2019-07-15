@@ -8,6 +8,7 @@ public class TestController {
 
     @RequestMapping("/get")
     public String get(){
+        System.out.println("11");
         return "testController";
     }
 }
