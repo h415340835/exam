@@ -12,6 +12,5 @@ public interface QuesBankRepository extends JpaRepository<QuesBank,String> {
 
     List<QuesBank> findAll(Sort sort);
 
-    QuesBank addQuesBank(QuesBank quesBank);
 
 }

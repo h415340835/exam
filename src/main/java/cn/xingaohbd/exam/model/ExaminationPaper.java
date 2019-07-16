@@ -20,7 +20,7 @@ public class ExaminationPaper implements Serializable {
 
     @Id
     @Column(name="id")
-    private ID id;
+    private Integer id;
 
     @Column(name = "create_date")
     private Date createDate = new Date();

@@ -21,12 +21,14 @@ public class QuesBankController {
     @Autowired
     private IQuesBankService quesBankService;
 
+    /**
+     * 获取所有试题
+     * @return
+     */
     @RequestMapping(value = "/getQuesBankList")
     @ResponseBody
     public Result<List<QuesBank>> getQuestionsList(){
         return Result.success(0,"获取成功",quesBankService.allQuesBank());
     }
-
-
 
 }
