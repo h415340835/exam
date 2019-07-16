@@ -3,17 +3,15 @@ package cn.xingaohbd.exam.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "user_answer")
-public class UserAnswer extends BaseEntity<Integer> implements Serializable {
+public class UserAnswer implements Serializable {
 
     private static final long serialVersionUID = 8842521846382975280L;
 
@@ -21,12 +19,12 @@ public class UserAnswer extends BaseEntity<Integer> implements Serializable {
     @Column(name="id")
     private ID id;
 
-    @Column(name = "create_time")
-    private Date createTime = new Date();
+    @Column(name = "create_date")
+    private Date createDate = new Date();
 
     @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
-    @Column(name = "update_time")
-    private Date updateTime = new Date();
+    @Column(name = "update_date")
+    private Date updateDate = new Date();
 
     @Column(name = "status")
     private Integer status;
@@ -49,8 +47,8 @@ public class UserAnswer extends BaseEntity<Integer> implements Serializable {
     public String toString() {
         return "UserAnswer{" +
                 "id=" + id +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
                 ", status=" + status +
                 ", user=" + user +
                 ", quesBank=" + quesBank +

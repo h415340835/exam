@@ -13,10 +13,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "sys")
-public class Sys extends BaseEntity<Integer> implements Serializable {
+public class Sys implements Serializable {
 
     private static final long serialVersionUID = 3563819130531705340L;
 
@@ -24,12 +23,12 @@ public class Sys extends BaseEntity<Integer> implements Serializable {
     @Column(name="id")
     private ID id;
 
-    @Column(name = "create_time")
-    private Date createTime = new Date();
+    @Column(name = "create_date")
+    private Date createDate = new Date();
 
     @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
-    @Column(name = "update_time")
-    private Date updateTime = new Date();
+    @Column(name = "update_date")
+    private Date updateDate = new Date();
 
     @Column(name = "status")
     private Integer status;
@@ -50,8 +49,8 @@ public class Sys extends BaseEntity<Integer> implements Serializable {
     public String toString() {
         return "Sys{" +
                 "id=" + id +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
                 ", status=" + status +
                 ", sysAccount='" + sysAccount + '\'' +
                 ", sysPassword='" + sysPassword + '\'' +

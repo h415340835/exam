@@ -3,7 +3,6 @@ package cn.xingaohbd.exam.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,10 +12,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "examination_paper")
-public class ExaminationPaper extends BaseEntity<Integer> implements Serializable {
+public class ExaminationPaper implements Serializable {
 
     private static final long serialVersionUID = 281609014299756850L;
 
@@ -24,12 +22,12 @@ public class ExaminationPaper extends BaseEntity<Integer> implements Serializabl
     @Column(name="id")
     private ID id;
 
-    @Column(name = "create_time")
-    private Date createTime = new Date();
+    @Column(name = "create_date")
+    private Date createDate = new Date();
 
     @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
-    @Column(name = "update_time")
-    private Date updateTime = new Date();
+    @Column(name = "update_date")
+    private Date updateDate = new Date();
 
     @Column(name = "status")
     private Integer status;
@@ -53,8 +51,8 @@ public class ExaminationPaper extends BaseEntity<Integer> implements Serializabl
     public String toString() {
         return "ExaminationPaper{" +
                 "id=" + id +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
                 ", status=" + status +
                 ", examName='" + examName + '\'' +
                 ", examCount=" + examCount +
