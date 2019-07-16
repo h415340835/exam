@@ -13,4 +13,9 @@ public class ApiController {
         return modelAndView;
     }
 
+    @RequestMapping("/")
+    public String getPage(ModelAndView modelAndView){
+        return "index";
+    }
+
 }
