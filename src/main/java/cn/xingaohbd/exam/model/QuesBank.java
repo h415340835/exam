@@ -19,7 +19,7 @@ public class QuesBank implements Serializable {
 
     @Id
     @Column(name="id")
-    private Integer id;
+    private int id;
 
     @Column(name = "create_date")
     private Date createDate = new Date();
@@ -55,9 +55,9 @@ public class QuesBank implements Serializable {
     @Column(name = "ques_type_status")
     private Integer quesTypeStatus;
 
-    @ManyToOne
-    @JoinColumn(name="classify_id")
-    private Classify classify;
+   // @ManyToOne
+    @Column(name="classify_id")
+    private Integer classifyId;
 
     @Column(name = "analysis")
     private String analysis;
@@ -77,7 +77,7 @@ public class QuesBank implements Serializable {
                 ", answer='" + answer + '\'' +
                 ", level=" + level +
                 ", quesTypeStatus=" + quesTypeStatus +
-                ", classify=" + classify +
+                ", classifyId=" + classifyId +
                 ", analysis='" + analysis + '\'' +
                 '}';
     }

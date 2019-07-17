@@ -45,7 +45,7 @@ public class ExaminationPaper implements Serializable {
     private String examTime;
 
     @Column(name = "classify_id")
-    private Classify classify;
+    private Integer classifyId;
 
     @Override
     public String toString() {
@@ -58,7 +58,7 @@ public class ExaminationPaper implements Serializable {
                 ", examCount=" + examCount +
                 ", examStar=" + examStar +
                 ", examTime='" + examTime + '\'' +
-                ", classify=" + classify +
+                ", classifyId=" + classifyId +
                 '}';
     }
 }

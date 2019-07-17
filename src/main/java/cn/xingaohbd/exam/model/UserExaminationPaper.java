@@ -30,13 +30,13 @@ public class UserExaminationPaper implements Serializable {
     @Column(name = "status")
     private Integer status;
 
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
+    //@ManyToOne
+    @Column(name="user_id")
+    private Integer userId;
 
-    @ManyToOne
-    @JoinColumn(name="examination_paper_id")
-    private ExaminationPaper examinationPaper;
+   // @ManyToOne
+    @Column(name="examination_paper_id")
+    private Integer examinationPaperId;
 
     @Column(name = "examination_paper_score")
     private Integer examinationPaperScore;
@@ -48,8 +48,8 @@ public class UserExaminationPaper implements Serializable {
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", status=" + status +
-                ", user=" + user +
-                ", examinationPaper=" + examinationPaper +
+                ", userId=" + userId +
+                ", examinationPaperId=" + examinationPaperId +
                 ", examinationPaperScore=" + examinationPaperScore +
                 '}';
     }

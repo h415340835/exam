@@ -30,13 +30,13 @@ public class QuesExaminationPaper implements Serializable {
     @Column(name = "status")
     private Integer status;
 
-    @ManyToOne
-    @JoinColumn(name="examination_paper_id")
-    private ExaminationPaper examinationPaper;
+   // @ManyToOne
+    @Column(name="examination_paper_id")
+    private Integer examinationPaperId;
 
-    @ManyToOne
-    @JoinColumn(name="ques_bank_id")
-    private QuesBank quesBank;
+   // @ManyToOne
+    @Column(name="ques_bank_id")
+    private Integer quesBankId;
 
     @Override
     public String toString() {
@@ -45,8 +45,8 @@ public class QuesExaminationPaper implements Serializable {
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", status=" + status +
-                ", examinationPaper=" + examinationPaper +
-                ", quesBank=" + quesBank +
+                ", examinationPaperId=" + examinationPaperId +
+                ", quesBankId=" + quesBankId +
                 '}';
     }
 }

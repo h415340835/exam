@@ -30,13 +30,13 @@ public class UserExaminationPaperMistakes implements Serializable {
     @Column(name = "status")
     private Integer status;
 
-    @ManyToOne
-    @JoinColumn(name = "user_examination_paper_id")
-    private UserExaminationPaper userExaminationPaper;
+    //@ManyToOne
+    @Column(name = "user_examination_paper_id")
+    private Integer userExaminationPaperId;
 
-    @ManyToOne
-    @JoinColumn(name = "ques_bank_id")
-    private QuesBank quesBank;
+    //@ManyToOne
+    @Column(name = "ques_bank_id")
+    private Integer quesBankId;
 
     @Column(name = "user_answer")
     private String userAnswer;
@@ -48,8 +48,8 @@ public class UserExaminationPaperMistakes implements Serializable {
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", status=" + status +
-                ", userExaminationPaper=" + userExaminationPaper +
-                ", quesBank=" + quesBank +
+                ", userExaminationPaperId=" + userExaminationPaperId +
+                ", quesBankId=" + quesBankId +
                 ", userAnswer='" + userAnswer + '\'' +
                 '}';
     }

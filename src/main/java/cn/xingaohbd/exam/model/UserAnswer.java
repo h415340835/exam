@@ -29,13 +29,13 @@ public class UserAnswer implements Serializable {
     @Column(name = "status")
     private Integer status;
 
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
+    //@ManyToOne
+    @Column(name="user_id")
+    private Integer userId;
 
-    @ManyToOne
-    @JoinColumn(name="ques_bank_id")
-    private QuesBank quesBank;
+    //@ManyToOne
+    @Column(name="ques_bank_id")
+    private Integer quesBankId;
 
     @Column(name = "answer")
     private String answer;
@@ -50,8 +50,8 @@ public class UserAnswer implements Serializable {
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", status=" + status +
-                ", user=" + user +
-                ", quesBank=" + quesBank +
+                ", userId=" + userId +
+                ", quesBankId=" + quesBankId +
                 ", answer='" + answer + '\'' +
                 ", answerStatus=" + answerStatus +
                 '}';
