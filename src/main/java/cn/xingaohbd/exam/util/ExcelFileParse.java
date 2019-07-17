@@ -90,10 +90,8 @@ public class ExcelFileParse {
 
                     XSSFCell classifyId = row.getCell(8);//题目类型(java1，测试2)
                     if (classifyId != null) {
-                        Classify classify = new Classify();
                         classifyId.setCellType(CellType.STRING);
-                        classify.setId(new Integer(classifyId.getStringCellValue()));
-                        quesBank.setClassify(classify);
+                        quesBank.setClassifyId(new Integer(classifyId.getStringCellValue()));
                     }
 
                     list.add(quesBank);
