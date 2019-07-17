@@ -7,7 +7,11 @@ import java.util.List;
 
 public interface IQuesBankService {
 
-    public List<QuesBank> allQuesBank();
+    List<QuesBank> allQuesBank();
 
     Result<QuesBank> save(QuesBank quesBank);
+
+    Result addQuesBankList(String filePath);
+
+    Result saveList(List<QuesBank> listQuesBank);
 }

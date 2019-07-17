@@ -30,4 +30,34 @@ public class QuesBankServiceImpl implements IQuesBankService {
     }
 
 
+
+    @Override
+    public Result addQuesBankList(String filePath) {
+//        ExcelParse excelToMysql = new ExcelParse();
+//        try {
+//            List<QuesBank> listQuesBank = excelToMysql.parse(filePath);
+//            for (QuesBank q:
+//                 listQuesBank) {
+//                System.out.println("-----"+q);
+//            }
+//            System.out.println(listQuesBank);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return Result.failure();
+//        }
+        return Result.success();
+    }
+
+    @Override
+    public Result saveList(List<QuesBank> listQuesBank) {
+        try {
+            for (QuesBank quesBank:
+                    listQuesBank) {
+                quesBankRepository.save(quesBank);
+            }
+        }catch (Exception e){
+            return Result.failure();
+        }
+        return Result.success();
+    }
 }
